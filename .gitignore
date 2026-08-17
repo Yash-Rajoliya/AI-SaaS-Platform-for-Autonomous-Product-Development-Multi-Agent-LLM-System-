@@ -1,0 +1,52 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.venv/
+
+# env
+.env
+.env.local
+
+# build
+dist/
+build/
+coverage/
+tmp/
+
+# nx
+.nx/cache
+
+# turbo
+.turbo
+
+# logs
+*.log
+
+# ide
+.vscode/
+.idea/
+
+# mac
+.DS_Store
+
+# docker
+docker-data/
+
+# terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# kubernetes
+kubeconfig
+
+# secrets
+*.pem
+*.key
+*.crt

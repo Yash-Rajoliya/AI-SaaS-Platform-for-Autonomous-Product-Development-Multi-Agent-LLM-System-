@@ -1,0 +1,7 @@
+* @platform-team
+
+/apps/web/ @frontend-team
+/services/ @backend-team
+/terraform/ @platform-team
+/k8s/ @platform-team
+/security/ @security-team

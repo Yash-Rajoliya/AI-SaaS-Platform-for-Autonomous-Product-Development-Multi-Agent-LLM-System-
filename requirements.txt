@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy
+alembic
+redis
+kafka-python
+qdrant-client
+prometheus-client
+opentelemetry-sdk
+pytest
+httpx

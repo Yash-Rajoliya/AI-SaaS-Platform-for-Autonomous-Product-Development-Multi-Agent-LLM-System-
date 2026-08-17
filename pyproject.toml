@@ -1,0 +1,16 @@
+[project]
+name = "ai-platform"
+version = "1.0.0"
+description = "Autonomous Software Product Development Platform"
+
+requires-python = ">=3.11"
+
+dependencies = [
+  "fastapi",
+  "uvicorn",
+  "pydantic",
+  "sqlalchemy",
+  "redis",
+  "kafka-python",
+  "qdrant-client"
+]
