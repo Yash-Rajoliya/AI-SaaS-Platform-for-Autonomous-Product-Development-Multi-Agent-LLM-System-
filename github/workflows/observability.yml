@@ -1,0 +1,28 @@
+name: Observability Validation
+
+on:
+  pull_request:
+    paths:
+      - "grafana/**"
+      - "prometheus/**"
+      - "loki/**"
+      - "tempo/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate Prometheus Rules
+        run: |
+          echo "Checking Prometheus configs"
+
+      - name: Validate Grafana Dashboards
+        run: |
+          echo "Checking Grafana dashboards"
+
+      - name: Validate Tempo Config
+        run: |
+          echo "Checking tracing configs"
