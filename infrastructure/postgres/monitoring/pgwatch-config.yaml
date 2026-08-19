@@ -1,0 +1,29 @@
+databases:
+  - name: platform-primary
+
+    host: postgres-service
+    port: 5432
+
+    user: monitoring
+
+    metrics:
+      - db_stats
+      - table_stats
+      - index_stats
+      - replication
+      - locks
+      - bloat
+      - queries
+
+    statement_timeout_seconds: 30
+
+global:
+  scrape_interval: 15s
+
+retention:
+  metrics_days: 30
+
+alerts:
+  replication_lag_seconds: 30
+  deadlocks_threshold: 5
+  connections_threshold: 400
