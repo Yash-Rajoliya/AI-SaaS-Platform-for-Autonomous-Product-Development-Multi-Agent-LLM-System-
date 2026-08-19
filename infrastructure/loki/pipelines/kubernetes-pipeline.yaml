@@ -1,0 +1,18 @@
+pipeline_stages:
+
+  - cri: {}
+
+  - json:
+      expressions:
+        level: level
+        message: message
+
+  - labels:
+      level:
+
+  - timestamp:
+      source: timestamp
+      format: RFC3339
+
+  - output:
+      source: message

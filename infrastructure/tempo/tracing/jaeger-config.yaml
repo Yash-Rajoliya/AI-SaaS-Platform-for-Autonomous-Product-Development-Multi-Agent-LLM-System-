@@ -1,0 +1,20 @@
+collector:
+
+  zipkin:
+    host_port: :9411
+
+  otlp:
+    grpc:
+      host_port: :4317
+
+    http:
+      host_port: :4318
+
+query:
+  base_path: /
+
+storage:
+  type: memory
+
+sampling:
+  strategies_file: /etc/jaeger/sampling-policy.yaml

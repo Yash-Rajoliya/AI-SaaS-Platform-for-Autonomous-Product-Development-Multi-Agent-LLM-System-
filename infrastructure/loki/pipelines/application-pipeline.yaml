@@ -1,0 +1,15 @@
+pipeline_stages:
+
+  - json:
+      expressions:
+        service: service
+        level: level
+        trace_id: trace_id
+        message: message
+
+  - labels:
+      service:
+      level:
+
+  - output:
+      source: message

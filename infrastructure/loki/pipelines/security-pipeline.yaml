@@ -1,0 +1,14 @@
+pipeline_stages:
+
+  - regex:
+      expression: '.*(ERROR|WARN|SECURITY|AUTH_FAIL).*'
+
+  - labels:
+      category: security
+
+  - metrics:
+      security_events_total:
+        type: Counter
+        description: Security Events
+        config:
+          action: inc

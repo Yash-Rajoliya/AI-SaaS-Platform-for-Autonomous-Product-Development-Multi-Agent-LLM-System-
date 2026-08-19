@@ -1,0 +1,16 @@
+archive:
+
+  enabled: true
+
+  backend: s3
+
+  bucket: ai-saas-log-archive
+
+  compression: gzip
+
+  retention_after_archive: 365d
+
+  lifecycle:
+    transition_days: 30
+
+    glacier_days: 90

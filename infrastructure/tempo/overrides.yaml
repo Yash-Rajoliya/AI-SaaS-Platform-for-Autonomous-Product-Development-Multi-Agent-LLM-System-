@@ -1,0 +1,17 @@
+overrides:
+
+  default:
+
+    ingestion_rate_limit_bytes: 15000000
+
+    ingestion_burst_size_bytes: 30000000
+
+    max_traces_per_user: 100000
+
+    max_search_duration: 168h
+
+  production:
+
+    max_traces_per_user: 500000
+
+    ingestion_rate_limit_bytes: 50000000

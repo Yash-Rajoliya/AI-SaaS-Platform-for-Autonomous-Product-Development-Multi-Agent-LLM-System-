@@ -1,0 +1,15 @@
+retention:
+
+  logs:
+    default: 30d
+
+    namespaces:
+
+      production: 90d
+
+      observability: 180d
+
+      security: 365d
+
+limits_config:
+  retention_period: 720h

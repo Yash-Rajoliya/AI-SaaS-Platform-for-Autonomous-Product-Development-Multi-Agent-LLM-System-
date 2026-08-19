@@ -1,0 +1,29 @@
+retention:
+
+  traces:
+
+    default: 30d
+
+    critical_services: 90d
+
+    security_incidents: 365d
+
+    audit_traces: 365d
+
+storage:
+
+  archive:
+
+    enabled: true
+
+    backend: s3
+
+    bucket: ai-saas-trace-archive
+
+    compression: zstd
+
+compaction:
+
+  enabled: true
+
+  interval: 24h

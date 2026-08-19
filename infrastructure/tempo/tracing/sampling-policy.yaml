@@ -1,0 +1,37 @@
+default_strategy:
+
+  type: probabilistic
+
+  param: 10
+
+service_strategies:
+
+  - service: api-gateway
+
+    type: probabilistic
+
+    param: 25
+
+  - service: agent-service
+
+    type: probabilistic
+
+    param: 50
+
+  - service: orchestration-service
+
+    type: probabilistic
+
+    param: 100
+
+  - service: deployment-service
+
+    type: probabilistic
+
+    param: 100
+
+  - service: monitoring-service
+
+    type: probabilistic
+
+    param: 75
