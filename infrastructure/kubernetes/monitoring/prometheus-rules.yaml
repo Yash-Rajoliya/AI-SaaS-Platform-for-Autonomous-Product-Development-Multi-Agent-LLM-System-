@@ -1,0 +1,60 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: platform-alerts
+  namespace: observability
+
+spec:
+  groups:
+    - name: platform.rules
+
+      rules:
+        - alert: HighCPUUsage
+          expr: avg(rate(container_cpu_usage_seconds_total[5m])) > 0.85
+          for: 5m
+
+          labels:
+            severity: warning
+
+          annotations:
+            summary: High CPU utilization detected
+
+        - alert: HighMemoryUsage
+          expr: avg(container_memory_usage_bytes) > 0.90
+          for: 5m
+
+          labels:
+            severity: critical
+
+          annotations:
+            summary: High memory utilization detected
+
+        - alert: PodCrashLooping
+          expr: increase(kube_pod_container_status_restarts_total[10m]) > 3
+          for: 5m
+
+          labels:
+            severity: critical
+
+          annotations:
+            summary: Pod restarting repeatedly
+
+        - alert: KafkaUnavailable
+          expr: up{job="kafka"} == 0
+          for: 2m
+
+          labels:
+            severity: critical
+
+          annotations:
+            summary: Kafka broker unavailable
+
+        - alert: PostgresUnavailable
+          expr: up{job="postgres"} == 0
+          for: 2m
+
+          labels:
+            severity: critical
+
+          annotations:
+            summary: PostgreSQL unavailable

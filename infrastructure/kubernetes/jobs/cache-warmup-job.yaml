@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cache-warmup
+  namespace: ai-runtime
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+
+      containers:
+        - name: warmup
+          image: platform/agent-service:latest
+
+          command:
+            - node
+            - scripts/cache-warmup.js

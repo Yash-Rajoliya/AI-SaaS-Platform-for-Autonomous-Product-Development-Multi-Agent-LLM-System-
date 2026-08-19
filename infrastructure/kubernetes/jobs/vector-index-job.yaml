@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: vector-index-builder
+  namespace: ai-runtime
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+
+      containers:
+        - name: qdrant-indexer
+          image: platform/agent-service:latest
+
+          command:
+            - node
+            - scripts/vector-index.js
