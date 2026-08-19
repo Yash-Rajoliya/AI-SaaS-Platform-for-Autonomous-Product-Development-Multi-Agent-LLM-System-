@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: optimization-service
+  namespace: ai-runtime
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: optimization-service
+  template:
+    metadata:
+      labels:
+        app: optimization-service
+    spec:
+      containers:
+        - name: optimization-service
+          image: ghcr.io/company/optimization-service:latest
+          ports:
+            - containerPort: 4008

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-service
+  namespace: platform
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: deployment-service
+  template:
+    metadata:
+      labels:
+        app: deployment-service
+    spec:
+      containers:
+        - name: deployment-service
+          image: ghcr.io/company/deployment-service:latest
+          ports:
+            - containerPort: 4009

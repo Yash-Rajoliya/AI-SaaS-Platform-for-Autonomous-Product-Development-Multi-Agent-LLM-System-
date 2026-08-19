@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orchestration-service
+  namespace: ai-runtime
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: orchestration-service
+  template:
+    metadata:
+      labels:
+        app: orchestration-service
+    spec:
+      containers:
+        - name: orchestration-service
+          image: ghcr.io/company/orchestration-service:latest
+          ports:
+            - containerPort: 4007
+          resources:
+            requests:
+              cpu: "1000m"
+              memory: "2Gi"
+            limits:
+              cpu: "4"
+              memory: "8Gi"

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: platform-core
+  namespace: platform
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: platform-core
+  template:
+    metadata:
+      labels:
+        app: platform-core
+    spec:
+      containers:
+        - name: platform-core
+          image: ghcr.io/company/platform-core:latest
+          ports:
+            - containerPort: 4010

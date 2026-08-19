@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: governance-service
+  namespace: security
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: governance-service
+  template:
+    metadata:
+      labels:
+        app: governance-service
+    spec:
+      containers:
+        - name: governance-service
+          image: ghcr.io/company/governance-service:latest
+          ports:
+            - containerPort: 4006
