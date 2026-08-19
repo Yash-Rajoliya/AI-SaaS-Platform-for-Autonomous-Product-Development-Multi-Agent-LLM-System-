@@ -5,31 +5,30 @@ metadata:
   namespace: platform
 spec:
   replicas: 6
-
   strategy:
     canary:
       maxSurge: 25%
       maxUnavailable: 0
-
+      analysis:
+        templates:
+          - templateName: success-rate-check
+        args:
+          - name: service-name
+            value: platform-core
       steps:
         - setWeight: 10
         - pause:
             duration: 2m
-
         - setWeight: 30
         - pause:
             duration: 5m
-
         - setWeight: 60
         - pause:
             duration: 10m
-
         - setWeight: 100
-
   selector:
     matchLabels:
       app: platform-core
-
   template:
     metadata:
       labels:
@@ -38,3 +37,6 @@ spec:
       containers:
         - name: platform-core
           image: platform-core:latest
+          ports:
+            - containerPort: 8080
+              name: http
