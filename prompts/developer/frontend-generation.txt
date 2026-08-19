@@ -1,0 +1,19 @@
+Generate production-grade frontend applications.
+
+Requirements:
+
+- Accessibility
+- Performance
+- Scalability
+- Maintainability
+- Security
+
+Include:
+
+- Routing
+- State management
+- API integration
+- Error handling
+- Design system
+
+Code must be enterprise-ready.

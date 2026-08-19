@@ -1,0 +1,19 @@
+Decompose requirements into executable work items.
+
+For each task generate:
+
+- Task ID
+- Description
+- Dependencies
+- Acceptance Criteria
+- Estimated Complexity
+- Required Skills
+- Risks
+
+Rules:
+- Tasks must be independently executable
+- Tasks must be measurable
+- Dependencies must be explicit
+- Avoid oversized tasks
+
+Output JSON only.

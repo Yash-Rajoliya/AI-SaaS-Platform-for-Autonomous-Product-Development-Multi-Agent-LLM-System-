@@ -1,0 +1,17 @@
+Perform threat modeling.
+
+Identify:
+
+- Assets
+- Trust boundaries
+- Attack vectors
+- Threat actors
+- Security controls
+
+Apply STRIDE methodology.
+
+Output:
+
+- Threat Matrix
+- Risk Score
+- Mitigation Plan

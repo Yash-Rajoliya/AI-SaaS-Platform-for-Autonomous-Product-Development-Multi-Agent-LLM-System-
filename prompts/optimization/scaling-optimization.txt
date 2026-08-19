@@ -1,0 +1,17 @@
+Optimize system scalability.
+
+Analyze:
+
+- Traffic growth
+- Capacity
+- Service limits
+- Infrastructure constraints
+
+Deliver:
+
+- Scaling strategy
+- Autoscaling policies
+- Capacity planning
+- Risk analysis
+
+Design for sustained growth.

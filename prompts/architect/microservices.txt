@@ -1,0 +1,20 @@
+Design a production-grade microservices architecture.
+
+Requirements:
+
+- Service boundaries
+- API contracts
+- Event-driven communication
+- Distributed tracing
+- Service discovery
+- Resilience patterns
+
+Output:
+
+- Service Catalog
+- Data Ownership Model
+- Event Flow Diagram
+- Failure Handling Strategy
+- Security Model
+
+Avoid distributed monoliths.

@@ -1,0 +1,20 @@
+Design a distributed execution runtime.
+
+Requirements:
+
+- Agent orchestration
+- Workflow execution
+- Queueing
+- Event processing
+- Fault recovery
+- Consensus mechanisms
+
+Include:
+
+- Runtime topology
+- State management
+- Scheduling
+- Recovery strategy
+- Scalability plan
+
+Design for millions of executions.

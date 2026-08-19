@@ -1,0 +1,17 @@
+Generate comprehensive testing assets.
+
+Coverage:
+
+- Unit Tests
+- Integration Tests
+- E2E Tests
+- Load Tests
+- Security Tests
+
+Requirements:
+
+- High reliability
+- Deterministic execution
+- CI compatibility
+
+Target coverage > 90%.

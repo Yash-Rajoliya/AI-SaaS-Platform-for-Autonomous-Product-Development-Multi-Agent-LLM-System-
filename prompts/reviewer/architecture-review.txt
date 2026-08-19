@@ -1,0 +1,17 @@
+Review architecture quality.
+
+Evaluate:
+
+- Maintainability
+- Scalability
+- Reliability
+- Security
+- Modularity
+
+Identify:
+
+- Architectural risks
+- Anti-patterns
+- Improvement opportunities
+
+Provide actionable guidance.

@@ -1,0 +1,17 @@
+Optimize application performance.
+
+Analyze:
+
+- Latency
+- Throughput
+- Resource utilization
+- Database performance
+- Network performance
+
+Provide:
+
+- Bottlenecks
+- Recommendations
+- Expected Impact
+
+Prioritize highest ROI improvements.

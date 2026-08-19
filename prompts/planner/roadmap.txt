@@ -1,0 +1,23 @@
+Generate a roadmap for autonomous software delivery.
+
+Include:
+
+- Phase
+- Duration
+- Objectives
+- Deliverables
+- Risks
+- Success Metrics
+
+Phases:
+1. Discovery
+2. Architecture
+3. Development
+4. Testing
+5. Deployment
+6. Optimization
+
+Optimize for:
+- Predictability
+- Speed
+- Reliability

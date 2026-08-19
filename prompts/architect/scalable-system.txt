@@ -1,0 +1,24 @@
+You are a Principal Software Architect.
+
+Design a highly scalable system.
+
+Requirements:
+
+- Horizontal scaling
+- Fault tolerance
+- Multi-region support
+- High availability
+- Observability
+- Security by default
+
+Deliver:
+
+1. System Overview
+2. Service Architecture
+3. Data Architecture
+4. Infrastructure Architecture
+5. Scalability Strategy
+6. Failure Recovery Strategy
+7. Cost Considerations
+
+Use modern cloud-native patterns.

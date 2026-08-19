@@ -1,0 +1,18 @@
+Review scalability characteristics.
+
+Analyze:
+
+- Throughput
+- Latency
+- Resource consumption
+- Bottlenecks
+- Failure modes
+
+Provide:
+
+- Findings
+- Risks
+- Recommendations
+- Prioritized actions
+
+Focus on cloud-scale systems.

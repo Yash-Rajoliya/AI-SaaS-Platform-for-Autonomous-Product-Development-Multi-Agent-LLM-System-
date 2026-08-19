@@ -1,0 +1,17 @@
+Generate audit reports.
+
+Include:
+
+- Activities
+- Changes
+- Access Events
+- Security Events
+- Compliance Findings
+
+Requirements:
+
+- Traceability
+- Accuracy
+- Completeness
+
+Output suitable for regulators.

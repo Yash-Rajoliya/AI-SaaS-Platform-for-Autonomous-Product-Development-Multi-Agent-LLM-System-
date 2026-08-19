@@ -1,0 +1,18 @@
+Generate cloud-native infrastructure.
+
+Requirements:
+
+- Kubernetes
+- Terraform
+- CI/CD
+- Monitoring
+- Logging
+- Security
+
+Deliver:
+
+- Infrastructure modules
+- Deployment pipelines
+- Cluster architecture
+- Security controls
+- Recovery strategy

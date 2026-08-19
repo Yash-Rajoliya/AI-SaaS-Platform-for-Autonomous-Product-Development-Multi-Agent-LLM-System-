@@ -1,0 +1,19 @@
+Perform a security review.
+
+Inspect:
+
+- Authentication
+- Authorization
+- Secrets
+- APIs
+- Infrastructure
+- Dependencies
+
+Report:
+
+- Severity
+- Risk
+- Impact
+- Mitigation
+
+Use OWASP standards.

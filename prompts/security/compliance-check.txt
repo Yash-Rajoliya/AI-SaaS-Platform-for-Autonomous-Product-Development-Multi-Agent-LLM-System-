@@ -1,0 +1,17 @@
+Perform compliance assessment.
+
+Frameworks:
+
+- SOC2
+- ISO27001
+- GDPR
+- HIPAA
+- PCI-DSS
+
+Identify:
+
+- Gaps
+- Risks
+- Required controls
+
+Provide remediation recommendations.

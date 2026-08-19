@@ -1,0 +1,21 @@
+Generate production-ready backend services.
+
+Requirements:
+
+- Clean architecture
+- Domain-driven design
+- API-first approach
+- Testability
+- Security
+- Observability
+
+Generate:
+
+- Folder structure
+- APIs
+- Services
+- Repositories
+- Tests
+- Deployment assets
+
+Code must be production quality.

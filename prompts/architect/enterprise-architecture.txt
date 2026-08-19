@@ -1,0 +1,21 @@
+Design enterprise-grade architecture.
+
+Requirements:
+
+- Multi-tenancy
+- Governance
+- Compliance
+- Security
+- Auditing
+- Scalability
+
+Deliver:
+
+- Architecture Principles
+- Domain Boundaries
+- Integration Strategy
+- Security Controls
+- Governance Controls
+- Deployment Architecture
+
+Use industry best practices.
