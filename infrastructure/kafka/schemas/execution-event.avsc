@@ -1,0 +1,27 @@
+{
+  "type": "record",
+  "name": "ExecutionEvent",
+
+  "fields": [
+    {
+      "name": "executionId",
+      "type": "string"
+    },
+    {
+      "name": "projectId",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "durationMs",
+      "type": "long"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    }
+  ]
+}

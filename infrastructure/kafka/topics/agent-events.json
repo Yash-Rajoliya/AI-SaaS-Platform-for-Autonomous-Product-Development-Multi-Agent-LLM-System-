@@ -1,0 +1,10 @@
+{
+  "topic": "agent-events",
+  "partitions": 24,
+  "replicationFactor": 3,
+  "configs": {
+    "cleanup.policy": "delete",
+    "retention.ms": "604800000",
+    "compression.type": "lz4"
+  }
+}

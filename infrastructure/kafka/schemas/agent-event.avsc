@@ -1,0 +1,32 @@
+{
+  "type": "record",
+  "name": "AgentEvent",
+  "namespace": "platform.events",
+
+  "fields": [
+    {
+      "name": "eventId",
+      "type": "string"
+    },
+    {
+      "name": "agentId",
+      "type": "string"
+    },
+    {
+      "name": "agentType",
+      "type": "string"
+    },
+    {
+      "name": "action",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "topic": "execution-events",
+  "partitions": 48,
+  "replicationFactor": 3,
+  "configs": {
+    "cleanup.policy": "delete",
+    "retention.ms": "1209600000",
+    "compression.type": "snappy"
+  }
+}

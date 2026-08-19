@@ -1,0 +1,27 @@
+{
+  "type": "record",
+  "name": "DeploymentEvent",
+
+  "fields": [
+    {
+      "name": "deploymentId",
+      "type": "string"
+    },
+    {
+      "name": "environment",
+      "type": "string"
+    },
+    {
+      "name": "version",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    }
+  ]
+}

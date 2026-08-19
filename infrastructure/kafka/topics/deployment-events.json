@@ -1,0 +1,9 @@
+{
+  "topic": "deployment-events",
+  "partitions": 12,
+  "replicationFactor": 3,
+  "configs": {
+    "cleanup.policy": "delete",
+    "retention.ms": "2592000000"
+  }
+}

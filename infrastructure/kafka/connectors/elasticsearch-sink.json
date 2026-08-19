@@ -1,0 +1,19 @@
+{
+  "name": "elasticsearch-sink",
+
+  "config": {
+    "connector.class": "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector",
+
+    "topics": "agent-events,execution-events",
+
+    "connection.url": "http://elasticsearch:9200",
+
+    "type.name": "_doc",
+
+    "key.ignore": "true",
+
+    "schema.ignore": "true",
+
+    "tasks.max": "4"
+  }
+}

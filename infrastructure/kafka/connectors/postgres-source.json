@@ -1,0 +1,25 @@
+{
+  "name": "postgres-source",
+
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+
+    "database.hostname": "postgres-service",
+    "database.port": "5432",
+
+    "database.user": "debezium",
+    "database.password": "${file:/opt/secrets/db.properties:password}",
+
+    "database.dbname": "platform",
+
+    "topic.prefix": "cdc",
+
+    "plugin.name": "pgoutput",
+
+    "slot.name": "platform_slot",
+
+    "publication.autocreate.mode": "filtered",
+
+    "tasks.max": "1"
+  }
+}
