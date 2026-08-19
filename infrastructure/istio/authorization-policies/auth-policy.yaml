@@ -1,0 +1,17 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: auth-policy
+  namespace: platform
+spec:
+  selector:
+    matchLabels:
+      app: api-gateway
+
+  action: ALLOW
+
+  rules:
+    - from:
+        - source:
+            principals:
+              - cluster.local/ns/platform/sa/api-gateway

@@ -1,0 +1,33 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: public-gateway
+  namespace: platform
+  labels:
+    app.kubernetes.io/name: public-gateway
+    app.kubernetes.io/component: ingress
+spec:
+  selector:
+    istio: ingressgateway
+
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - api.ai-saas.com
+        - app.ai-saas.com
+      tls:
+        httpsRedirect: true
+
+    - port:
+        number: 443
+        name: https
+        protocol: HTTPS
+      hosts:
+        - api.ai-saas.com
+        - app.ai-saas.com
+      tls:
+        mode: SIMPLE
+        credentialName: public-tls-secret

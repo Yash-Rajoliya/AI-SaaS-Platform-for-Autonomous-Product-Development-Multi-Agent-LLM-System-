@@ -1,0 +1,22 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: websocket-vs
+  namespace: platform
+spec:
+  gateways:
+    - public-gateway
+
+  hosts:
+    - ws.ai-saas.com
+
+  http:
+    - match:
+        - uri:
+            prefix: /socket.io
+      route:
+        - destination:
+            host: api-gateway.platform.svc.cluster.local
+            port:
+              number: 8080
+      timeout: 0s

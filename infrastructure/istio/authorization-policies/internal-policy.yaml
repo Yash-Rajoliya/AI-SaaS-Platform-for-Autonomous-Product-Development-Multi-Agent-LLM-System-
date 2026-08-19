@@ -1,0 +1,14 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: internal-policy
+  namespace: platform
+spec:
+  action: ALLOW
+
+  rules:
+    - from:
+        - source:
+            namespaces:
+              - platform
+              - ai-runtime
