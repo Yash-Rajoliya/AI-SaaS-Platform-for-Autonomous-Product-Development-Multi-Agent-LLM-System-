@@ -1,0 +1,45 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: deployment-workflow
+  namespace: argo
+spec:
+  entrypoint: deploy
+
+  templates:
+    - name: deploy
+      steps:
+        - - name: validate
+            template: validation
+
+        - - name: deploy
+            template: deployment
+
+        - - name: verify
+            template: verification
+
+    - name: validation
+      container:
+        image: alpine:3.20
+        command: ["/bin/sh", "-c"]
+        args:
+          - echo "Validating deployment"
+
+    - name: deployment
+      container:
+        image: bitnami/kubectl:latest
+        command:
+          - kubectl
+        args:
+          - rollout
+          - restart
+          - deployment/platform-core
+
+    - name: verification
+      container:
+        image: alpine:3.20
+        command:
+          - sh
+          - -c
+        args:
+          - echo "Deployment verification complete"

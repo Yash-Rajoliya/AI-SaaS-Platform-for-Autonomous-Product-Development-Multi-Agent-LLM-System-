@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: kafka-event-source
+  namespace: argo-events
+spec:
+  kafka:
+    platform-events:
+      url: kafka.kafka.svc.cluster.local:9092
+      topic: platform-events
+      consumerGroup:
+        groupName: argo-events

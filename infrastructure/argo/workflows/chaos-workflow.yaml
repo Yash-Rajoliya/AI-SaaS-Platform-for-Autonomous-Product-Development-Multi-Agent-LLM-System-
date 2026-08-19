@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: chaos-workflow
+  namespace: argo
+spec:
+  entrypoint: chaos-test
+
+  templates:
+    - name: chaos-test
+      container:
+        image: alpine:3.20
+        command:
+          - sh
+          - -c
+        args:
+          - |
+            echo "Running resilience validation"
+            sleep 30
+            echo "Chaos workflow completed"

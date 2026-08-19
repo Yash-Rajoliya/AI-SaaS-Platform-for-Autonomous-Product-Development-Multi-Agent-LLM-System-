@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: testing-template
+spec:
+  templates:
+    - name: tests
+      container:
+        image: node:22-alpine
+        command:
+          - npm
+        args:
+          - test

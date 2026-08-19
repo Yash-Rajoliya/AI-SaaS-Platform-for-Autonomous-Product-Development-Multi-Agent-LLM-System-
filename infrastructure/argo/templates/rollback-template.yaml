@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: rollback-template
+spec:
+  templates:
+    - name: rollback
+      container:
+        image: bitnami/kubectl:latest
+        command:
+          - kubectl
+        args:
+          - rollout
+          - undo
+          - deployment/platform-core

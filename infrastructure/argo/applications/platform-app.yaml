@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: platform-app
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/company/ai-saas-platform
+    targetRevision: main
+    path: infrastructure/kubernetes
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: platform
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: deployment-sensor
+  namespace: argo-events
+spec:
+  dependencies:
+    - name: deployment-webhook
+      eventSourceName: webhook-event-source
+      eventName: deployment
+
+  triggers:
+    - template:
+        name: deployment-workflow
+
+        argoWorkflow:
+          operation: submit
+
+          source:
+            resource:
+              apiVersion: argoproj.io/v1alpha1
+              kind: Workflow
+              metadata:
+                generateName: deployment-
+              spec:
+                workflowTemplateRef:
+                  name: deployment-workflow

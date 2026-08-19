@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: platform-core
+  namespace: platform
+spec:
+  replicas: 6
+
+  strategy:
+    canary:
+      maxSurge: 25%
+      maxUnavailable: 0
+
+      steps:
+        - setWeight: 10
+        - pause:
+            duration: 2m
+
+        - setWeight: 30
+        - pause:
+            duration: 5m
+
+        - setWeight: 60
+        - pause:
+            duration: 10m
+
+        - setWeight: 100
+
+  selector:
+    matchLabels:
+      app: platform-core
+
+  template:
+    metadata:
+      labels:
+        app: platform-core
+    spec:
+      containers:
+        - name: platform-core
+          image: platform-core:latest

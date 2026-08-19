@@ -1,0 +1,48 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: ai-generation-workflow
+  namespace: argo
+spec:
+  entrypoint: generate-platform
+
+  serviceAccountName: argo-workflow
+
+  templates:
+    - name: generate-platform
+      dag:
+        tasks:
+          - name: generate-prd
+            template: ai-task
+
+          - name: generate-architecture
+            dependencies:
+              - generate-prd
+            template: ai-task
+
+          - name: generate-code
+            dependencies:
+              - generate-architecture
+            template: ai-task
+
+          - name: run-validation
+            dependencies:
+              - generate-code
+            template: validation-task
+
+    - name: ai-task
+      container:
+        image: platform-core:latest
+        command:
+          - node
+        args:
+          - scripts/generate.js
+
+    - name: validation-task
+      container:
+        image: platform-core:latest
+        command:
+          - npm
+        args:
+          - run
+          - validate

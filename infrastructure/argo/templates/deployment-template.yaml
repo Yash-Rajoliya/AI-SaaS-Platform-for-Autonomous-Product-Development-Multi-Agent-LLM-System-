@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: deployment-template
+spec:
+  templates:
+    - name: deployment
+      container:
+        image: bitnami/kubectl:latest
+        command:
+          - kubectl
+        args:
+          - apply
+          - -f
+          - manifests/
