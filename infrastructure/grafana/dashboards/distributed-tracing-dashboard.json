@@ -1,0 +1,26 @@
+{
+  "title": "Distributed Tracing",
+  "tags": ["tracing"],
+  "schemaVersion": 38,
+  "version": 1,
+  "panels": [
+    {
+      "title": "Trace Throughput",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum(rate(traces_spanmetrics_calls_total[5m]))"
+        }
+      ]
+    },
+    {
+      "title": "Span Error Rate",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum(rate(traces_spanmetrics_calls_total{status_code='ERROR'}[5m]))"
+        }
+      ]
+    }
+  ]
+}

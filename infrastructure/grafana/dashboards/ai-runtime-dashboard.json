@@ -1,0 +1,27 @@
+{
+  "title": "AI Runtime Dashboard",
+  "tags": ["ai", "runtime"],
+  "refresh": "15s",
+  "schemaVersion": 38,
+  "version": 1,
+  "panels": [
+    {
+      "title": "Agent Executions",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum(rate(agent_executions_total[5m]))"
+        }
+      ]
+    },
+    {
+      "title": "Execution Success Rate",
+      "type": "gauge",
+      "targets": [
+        {
+          "expr": "(sum(agent_execution_success_total) / sum(agent_executions_total))*100"
+        }
+      ]
+    }
+  ]
+}

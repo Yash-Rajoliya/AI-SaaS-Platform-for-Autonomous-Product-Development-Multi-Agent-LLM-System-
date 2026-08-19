@@ -1,0 +1,26 @@
+{
+  "title": "Agent Performance",
+  "tags": ["agents"],
+  "schemaVersion": 38,
+  "version": 1,
+  "panels": [
+    {
+      "title": "Planner Agent Duration",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "avg(agent_execution_duration_seconds{agent='planner'})"
+        }
+      ]
+    },
+    {
+      "title": "Architect Agent Duration",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "avg(agent_execution_duration_seconds{agent='architect'})"
+        }
+      ]
+    }
+  ]
+}

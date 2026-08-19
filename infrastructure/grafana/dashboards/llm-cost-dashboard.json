@@ -1,0 +1,26 @@
+{
+  "title": "LLM Cost Dashboard",
+  "tags": ["llm", "cost"],
+  "schemaVersion": 38,
+  "version": 1,
+  "panels": [
+    {
+      "title": "Daily LLM Cost",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum(llm_cost_usd)"
+        }
+      ]
+    },
+    {
+      "title": "Tokens Consumed",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum(llm_tokens_total)"
+        }
+      ]
+    }
+  ]
+}

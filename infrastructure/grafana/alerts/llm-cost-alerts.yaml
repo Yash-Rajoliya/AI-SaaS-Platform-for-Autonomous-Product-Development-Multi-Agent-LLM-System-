@@ -1,0 +1,16 @@
+groups:
+  - name: llm-cost-alerts
+
+    rules:
+      - alert: LLMCostSpike
+
+        expr: >
+          increase(llm_cost_usd[1h]) > 100
+
+        for: 10m
+
+        labels:
+          severity: critical
+
+        annotations:
+          summary: LLM spending spike detected

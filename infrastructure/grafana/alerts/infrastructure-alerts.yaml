@@ -1,0 +1,16 @@
+groups:
+  - name: infrastructure-alerts
+
+    rules:
+      - alert: HighNodeCPU
+
+        expr: >
+          100 - avg(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100 > 85
+
+        for: 10m
+
+        labels:
+          severity: critical
+
+        annotations:
+          summary: High node CPU utilization

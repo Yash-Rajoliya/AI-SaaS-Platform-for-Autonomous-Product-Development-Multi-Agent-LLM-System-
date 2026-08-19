@@ -1,0 +1,26 @@
+{
+  "title": "Latency Dashboard",
+  "tags": ["latency"],
+  "schemaVersion": 38,
+  "version": 1,
+  "panels": [
+    {
+      "title": "P95 Latency",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95,sum(rate(http_request_duration_seconds_bucket[5m])) by (le))"
+        }
+      ]
+    },
+    {
+      "title": "P99 Latency",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.99,sum(rate(http_request_duration_seconds_bucket[5m])) by (le))"
+        }
+      ]
+    }
+  ]
+}

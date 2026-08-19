@@ -1,0 +1,20 @@
+groups:
+  - name: ai-runtime-alerts
+
+    rules:
+      - alert: AgentFailureRateHigh
+
+        expr: >
+          (
+            sum(rate(agent_execution_failed_total[5m]))
+            /
+            sum(rate(agent_executions_total[5m]))
+          ) > 0.10
+
+        for: 5m
+
+        labels:
+          severity: critical
+
+        annotations:
+          summary: Agent failure rate exceeds 10%
