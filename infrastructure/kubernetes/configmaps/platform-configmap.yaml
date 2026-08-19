@@ -3,10 +3,10 @@ kind: ConfigMap
 metadata:
   name: platform-config
   namespace: platform
-
 data:
   NODE_ENV: "production"
   LOG_LEVEL: "info"
-  REDIS_HOST: "redis"
-  POSTGRES_HOST: "postgres"
-  KAFKA_BROKER: "kafka:9092"
+  REDIS_HOST: "redis.platform.svc.cluster.local"
+  POSTGRES_HOST: "postgres.platform.svc.cluster.local"
+  KAFKA_BROKER: "kafka.platform.svc.cluster.local:9092"
+  QDRANT_HOST: "qdrant.platform.svc.cluster.local"
