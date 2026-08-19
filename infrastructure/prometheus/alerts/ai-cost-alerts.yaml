@@ -1,0 +1,30 @@
+groups:
+  - name: ai-cost-alerts
+
+    rules:
+
+      - alert: LLMCostSpike
+
+        expr: >
+          increase(llm_cost_usd[1h]) > 100
+
+        for: 15m
+
+        labels:
+          severity: critical
+
+        annotations:
+          summary: AI spending spike detected
+
+      - alert: ExcessiveTokenConsumption
+
+        expr: >
+          increase(llm_tokens_total[1h]) > 10000000
+
+        for: 10m
+
+        labels:
+          severity: warning
+
+        annotations:
+          summary: Abnormal token consumption detected

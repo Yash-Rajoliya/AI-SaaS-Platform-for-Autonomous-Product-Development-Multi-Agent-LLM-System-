@@ -1,0 +1,24 @@
+groups:
+  - name: latency-alerts
+
+    rules:
+
+      - alert: HighLatency
+
+        expr: >
+          histogram_quantile(
+            0.95,
+            sum(
+              rate(
+                http_request_duration_seconds_bucket[5m]
+              )
+            ) by (le)
+          ) > 1
+
+        for: 5m
+
+        labels:
+          severity: warning
+
+        annotations:
+          summary: P95 latency above 1 second

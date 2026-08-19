@@ -1,0 +1,22 @@
+groups:
+  - name: memory-alerts
+
+    rules:
+
+      - alert: CriticalMemoryUsage
+
+        expr: >
+          (
+            node_memory_MemTotal_bytes -
+            node_memory_MemAvailable_bytes
+          )
+          /
+          node_memory_MemTotal_bytes > 0.90
+
+        for: 5m
+
+        labels:
+          severity: critical
+
+        annotations:
+          summary: Memory usage above 90%

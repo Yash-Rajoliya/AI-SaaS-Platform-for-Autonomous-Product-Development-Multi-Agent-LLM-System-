@@ -1,0 +1,11 @@
+- targets:
+    - kube-state-metrics.platform.svc.cluster.local:8080
+
+  labels:
+    job: kube-state-metrics
+
+- targets:
+    - kubelet.platform.svc.cluster.local:10250
+
+  labels:
+    job: kubelet

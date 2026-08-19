@@ -1,0 +1,71 @@
+groups:
+
+  - name: infrastructure
+
+    rules:
+
+      - alert: HighCPUUsage
+
+        expr: >
+          avg(
+            rate(node_cpu_seconds_total{mode!="idle"}[5m])
+          ) > 0.85
+
+        for: 10m
+
+        labels:
+          severity: critical
+
+        annotations:
+          summary: High CPU utilization
+
+      - alert: HighMemoryUsage
+
+        expr: >
+          (
+            node_memory_MemTotal_bytes -
+            node_memory_MemAvailable_bytes
+          )
+          /
+          node_memory_MemTotal_bytes > 0.90
+
+        for: 10m
+
+        labels:
+          severity: critical
+
+        annotations:
+          summary: Memory utilization exceeded 90%
+
+  - name: platform
+
+    rules:
+
+      - alert: ServiceDown
+
+        expr: up == 0
+
+        for: 2m
+
+        labels:
+          severity: critical
+
+        annotations:
+          summary: Service unavailable
+
+      - alert: AgentFailureRate
+
+        expr: >
+          (
+            sum(rate(agent_execution_failed_total[5m]))
+            /
+            sum(rate(agent_execution_total[5m]))
+          ) > 0.10
+
+        for: 5m
+
+        labels:
+          severity: warning
+
+        annotations:
+          summary: Agent failure rate exceeded threshold

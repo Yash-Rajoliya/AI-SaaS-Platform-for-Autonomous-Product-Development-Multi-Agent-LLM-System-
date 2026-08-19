@@ -1,0 +1,19 @@
+groups:
+  - name: cpu-alerts
+
+    rules:
+
+      - alert: CriticalCPUUsage
+
+        expr: >
+          avg(
+            rate(node_cpu_seconds_total{mode!="idle"}[5m])
+          ) > 0.90
+
+        for: 5m
+
+        labels:
+          severity: critical
+
+        annotations:
+          summary: CPU usage above 90%

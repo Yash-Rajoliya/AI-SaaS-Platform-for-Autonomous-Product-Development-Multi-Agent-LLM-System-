@@ -1,0 +1,18 @@
+- targets:
+    - api-gateway-service:8080
+    - auth-service:8080
+    - agent-service:8080
+    - execution-service:8080
+    - monitoring-service:8080
+    - governance-service:8080
+
+  labels:
+    job: platform-services
+
+- targets:
+    - orchestration-service:8080
+    - optimization-service:8080
+    - deployment-service:8080
+
+  labels:
+    job: ai-runtime

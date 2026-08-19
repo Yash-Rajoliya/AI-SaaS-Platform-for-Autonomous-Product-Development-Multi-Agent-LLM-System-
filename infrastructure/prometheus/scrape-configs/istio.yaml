@@ -1,0 +1,11 @@
+- targets:
+    - istiod.istio-system.svc.cluster.local:15014
+
+  labels:
+    component: istio-control-plane
+
+- targets:
+    - prometheus.istio-system.svc.cluster.local:15090
+
+  labels:
+    component: istio-proxy

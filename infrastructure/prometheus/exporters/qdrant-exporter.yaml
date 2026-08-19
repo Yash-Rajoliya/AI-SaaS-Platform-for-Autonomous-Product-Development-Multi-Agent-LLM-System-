@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: qdrant-exporter
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: qdrant-exporter
+
+  template:
+    metadata:
+      labels:
+        app: qdrant-exporter
+
+    spec:
+      containers:
+        - name: qdrant-exporter
+
+          image: qdrant/qdrant:v1.15.0
+
+          ports:
+            - containerPort: 6333
+
+          env:
+            - name: QDRANT__SERVICE__ENABLE_METRICS
+              value: "true"

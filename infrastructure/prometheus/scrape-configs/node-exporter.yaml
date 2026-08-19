@@ -1,0 +1,5 @@
+- targets:
+    - node-exporter.platform.svc.cluster.local:9100
+
+  labels:
+    component: node-exporter

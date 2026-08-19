@@ -1,0 +1,35 @@
+groups:
+
+  - name: platform-recordings
+
+    rules:
+
+      - record: platform:http_requests:rate5m
+
+        expr: >
+          sum(rate(http_requests_total[5m]))
+
+      - record: platform:latency:p95
+
+        expr: >
+          histogram_quantile(
+            0.95,
+            sum(
+              rate(http_request_duration_seconds_bucket[5m])
+            ) by (le)
+          )
+
+      - record: platform:latency:p99
+
+        expr: >
+          histogram_quantile(
+            0.99,
+            sum(
+              rate(http_request_duration_seconds_bucket[5m])
+            ) by (le)
+          )
+
+      - record: platform:llm_cost_hourly
+
+        expr: >
+          sum(increase(llm_cost_usd[1h]))
