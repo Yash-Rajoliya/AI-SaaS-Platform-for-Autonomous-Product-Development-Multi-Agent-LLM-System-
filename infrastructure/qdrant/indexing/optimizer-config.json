@@ -1,0 +1,9 @@
+{
+  "deleted_threshold": 0.2,
+  "vacuum_min_vector_number": 1000,
+  "default_segment_number": 4,
+  "max_segment_size_kb": 524288,
+  "memmap_threshold": 20000,
+  "indexing_threshold": 20000,
+  "flush_interval_sec": 5
+}

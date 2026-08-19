@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: CronJob
+
+metadata:
+  name: qdrant-backup
+  namespace: platform
+
+spec:
+  schedule: "0 */6 * * *"
+
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+
+          containers:
+            - name: backup
+
+              image: curlimages/curl:latest
+
+              command:
+                - /bin/sh
+                - -c
+
+              args:
+                - |
+                  curl -X POST \
+                  http://qdrant-service:6333/collections/snapshots
+
+                  echo "Snapshot created successfully"

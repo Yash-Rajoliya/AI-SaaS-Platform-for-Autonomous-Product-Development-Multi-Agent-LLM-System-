@@ -1,0 +1,10 @@
+{
+  "vector_size": 3072,
+  "distance": "Cosine",
+  "datatype": "float32",
+  "quantization": {
+    "enabled": true,
+    "type": "scalar",
+    "always_ram": false
+  }
+}

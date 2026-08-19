@@ -1,0 +1,10 @@
+{
+  "collection_name": "execution_history",
+  "vectors": {
+    "size": 3072,
+    "distance": "Cosine"
+  },
+  "replication_factor": 3,
+  "write_consistency_factor": 2,
+  "on_disk_payload": true
+}

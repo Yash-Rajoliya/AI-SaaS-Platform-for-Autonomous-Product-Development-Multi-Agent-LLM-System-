@@ -1,0 +1,13 @@
+{
+  "collection_name": "semantic_memory",
+  "vectors": {
+    "size": 3072,
+    "distance": "Cosine"
+  },
+  "replication_factor": 3,
+  "write_consistency_factor": 2,
+  "on_disk_payload": true,
+  "optimizers_config": {
+    "default_segment_number": 4
+  }
+}

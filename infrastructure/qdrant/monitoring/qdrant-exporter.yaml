@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: qdrant-exporter
+  namespace: observability
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: qdrant-exporter
+
+  template:
+    metadata:
+      labels:
+        app: qdrant-exporter
+
+    spec:
+      containers:
+        - name: qdrant-exporter
+
+          image: ghcr.io/qdrant/qdrant:v1.15.0
+
+          args:
+            - "--uri=http://qdrant-service:6333"
+
+          ports:
+            - name: metrics
+              containerPort: 6333
+
+---
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: qdrant-exporter
+  namespace: observability
+
+spec:
+  selector:
+    app: qdrant-exporter
+
+  ports:
+    - name: metrics
+      port: 6333
+      targetPort: 6333
