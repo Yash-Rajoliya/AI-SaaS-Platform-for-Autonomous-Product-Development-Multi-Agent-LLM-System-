@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ai-runtime-config
+  namespace: ai-runtime
+
+data:
+  MAX_AGENTS: "100"
+  MAX_CONCURRENT_WORKFLOWS: "1000"
+  REASONING_DEPTH: "8"
+  MEMORY_RETENTION_DAYS: "30"

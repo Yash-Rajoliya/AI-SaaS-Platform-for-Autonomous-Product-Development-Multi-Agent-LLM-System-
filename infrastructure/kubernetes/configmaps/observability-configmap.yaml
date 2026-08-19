@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: observability-config
+  namespace: observability
+
+data:
+  PROMETHEUS_RETENTION: "15d"
+  LOKI_RETENTION: "7d"
+  TEMPO_RETENTION: "7d"
