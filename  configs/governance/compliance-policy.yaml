@@ -1,0 +1,20 @@
+apiVersion: compliance.platform.io/v1
+
+kind: CompliancePolicy
+
+metadata:
+  name: enterprise-compliance
+
+spec:
+  frameworks:
+    - SOC2
+    - ISO27001
+    - GDPR
+
+  controls:
+    encryptionAtRest: required
+    encryptionInTransit: required
+    auditLogging: required
+
+  scanning:
+    frequency: daily

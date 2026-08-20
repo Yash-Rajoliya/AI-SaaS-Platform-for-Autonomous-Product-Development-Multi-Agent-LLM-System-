@@ -1,0 +1,10 @@
+{
+  "plannerAgent": true,
+  "architectAgent": true,
+  "developerAgent": true,
+  "reviewerAgent": true,
+  "multiModelRouting": true,
+  "reasoningEngine": true,
+  "reflectionEngine": true,
+  "autonomousRefactoring": false
+}

@@ -1,0 +1,23 @@
+apiVersion: execution.platform.io/v1
+
+kind: ExecutionPolicy
+
+metadata:
+  name: execution-policy
+
+spec:
+  retries:
+    maxAttempts: 5
+
+  timeout:
+    defaultSeconds: 3600
+
+  isolation:
+    sandboxRequired: true
+
+  resourceLimits:
+    cpu: "4"
+    memory: "8Gi"
+
+  approvals:
+    productionWorkflows: required

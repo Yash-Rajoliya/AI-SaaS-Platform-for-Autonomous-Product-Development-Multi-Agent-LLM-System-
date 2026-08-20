@@ -1,0 +1,7 @@
+{
+  "distributedTracing": true,
+  "logAggregation": true,
+  "aiCostTracking": true,
+  "agentTelemetry": true,
+  "workflowMetrics": true
+}

@@ -1,0 +1,21 @@
+apiVersion: audit.platform.io/v1
+
+kind: AuditPolicy
+
+metadata:
+  name: audit-policy
+
+spec:
+  events:
+    - deployment
+    - execution
+    - governance
+    - authentication
+
+  immutableStorage: true
+
+  retentionDays: 2555
+
+  export:
+    enabled: true
+    destination: s3

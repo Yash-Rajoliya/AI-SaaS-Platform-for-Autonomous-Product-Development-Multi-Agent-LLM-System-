@@ -1,0 +1,7 @@
+{
+  "mandatoryApprovals": true,
+  "securityReviewRequired": true,
+  "architectureReviewRequired": true,
+  "auditTrailEnabled": true,
+  "complianceChecksEnabled": true
+}

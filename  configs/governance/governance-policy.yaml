@@ -1,0 +1,22 @@
+apiVersion: governance.platform.io/v1
+
+kind: GovernancePolicy
+
+metadata:
+  name: platform-governance
+
+spec:
+  approvals:
+    required: true
+
+  reviews:
+    architecture: mandatory
+    security: mandatory
+    compliance: mandatory
+
+  execution:
+    allowProductionChanges: false
+    requireAuditRecord: true
+
+  retention:
+    auditLogsDays: 365

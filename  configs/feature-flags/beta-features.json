@@ -1,0 +1,7 @@
+{
+  "agentMarketplace": false,
+  "autonomousDeployment": false,
+  "crossRegionExecution": false,
+  "federatedClusters": true,
+  "dynamicScalingPolicies": true
+}
