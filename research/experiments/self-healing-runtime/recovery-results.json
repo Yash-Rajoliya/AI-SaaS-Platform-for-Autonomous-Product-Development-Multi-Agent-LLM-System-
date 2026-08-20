@@ -1,0 +1,10 @@
+{
+  "experiment": "self-healing-runtime",
+  "status": "pending",
+  "recovery_metrics": {
+    "mttr_seconds": 0,
+    "recovery_success_rate": 0,
+    "availability_percent": 0,
+    "data_loss_events": 0
+  }
+}

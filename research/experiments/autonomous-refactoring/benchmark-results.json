@@ -1,0 +1,12 @@
+{
+  "experiment": "autonomous-refactoring",
+  "status": "pending",
+  "metrics": {
+    "performance_gain_percent": 0,
+    "cost_reduction_percent": 0,
+    "security_improvement_score": 0,
+    "regressions_detected": 0
+  },
+  "baseline": {},
+  "candidate": {}
+}

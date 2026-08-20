@@ -1,0 +1,15 @@
+{
+  "experiment": "multi-agent-coordination",
+  "status": "pending",
+  "consensus_algorithms": {
+    "majority_vote": {},
+    "weighted_vote": {},
+    "confidence_aggregation": {},
+    "arbitration": {}
+  },
+  "metrics": {
+    "resolution_time_ms": 0,
+    "agreement_quality": 0,
+    "compliance_score": 0
+  }
+}
