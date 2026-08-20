@@ -1,0 +1,19 @@
+apiVersion: observability.platform.io/v1
+kind: MetricsConfig
+
+metadata:
+  name: metrics-config
+
+spec:
+  collectionIntervalSeconds: 15
+
+  exporters:
+    - prometheus
+
+  metrics:
+    - workflow_latency
+    - execution_duration
+    - token_consumption
+    - llm_cost
+    - cache_hit_rate
+    - agent_success_rate

@@ -1,0 +1,24 @@
+apiVersion: security.platform.io/v1
+kind: EncryptionPolicy
+
+metadata:
+  name: encryption-policy
+
+spec:
+  dataAtRest:
+    enabled: true
+    algorithm: AES-256-GCM
+
+  dataInTransit:
+    enabled: true
+    minimumTlsVersion: "1.3"
+
+  secrets:
+    provider: aws-kms
+    automaticRotation: true
+
+  databases:
+    encryptionRequired: true
+
+  backups:
+    encrypted: true

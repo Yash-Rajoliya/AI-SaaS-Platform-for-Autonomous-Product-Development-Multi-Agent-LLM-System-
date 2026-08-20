@@ -1,0 +1,24 @@
+apiVersion: prompts.platform.io/v1
+kind: PromptRegistry
+
+metadata:
+  name: prompt-registry
+
+spec:
+  categories:
+    - planner
+    - architect
+    - developer
+    - reviewer
+    - governance
+    - security
+
+  ownership:
+    required: true
+
+  metadata:
+    tags: true
+    descriptions: true
+
+  validation:
+    required: true

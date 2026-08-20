@@ -1,0 +1,17 @@
+apiVersion: runtime.platform.io/v1
+kind: ScalingConfig
+
+metadata:
+  name: scaling-config
+
+spec:
+  autoscaling:
+    enabled: true
+
+  cpuThreshold: 70
+
+  memoryThreshold: 75
+
+  executionQueueThreshold: 100
+
+  maxReplicas: 100

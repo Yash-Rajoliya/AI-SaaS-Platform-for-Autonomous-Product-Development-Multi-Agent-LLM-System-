@@ -1,0 +1,20 @@
+apiVersion: runtime.platform.io/v1
+kind: SchedulerConfig
+
+metadata:
+  name: scheduler-config
+
+spec:
+  schedulingStrategy: adaptive
+
+  queueing:
+    enabled: true
+
+  priorities:
+    critical: 100
+    high: 75
+    normal: 50
+    low: 10
+
+  loadBalancing:
+    enabled: true

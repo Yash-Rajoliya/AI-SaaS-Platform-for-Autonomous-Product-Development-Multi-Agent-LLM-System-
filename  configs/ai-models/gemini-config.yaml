@@ -1,0 +1,15 @@
+apiVersion: ai.platform.io/v1
+kind: ModelConfig
+
+metadata:
+  name: gemini
+
+spec:
+  provider: google
+
+  models:
+    primary: gemini-2.5-pro
+    fallback: gemini-2.5-flash
+
+  limits:
+    maxTokens: 1000000

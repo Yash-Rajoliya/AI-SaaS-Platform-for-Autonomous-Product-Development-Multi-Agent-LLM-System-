@@ -1,0 +1,30 @@
+apiVersion: ai.platform.io/v1
+kind: ModelRoutingPolicy
+
+metadata:
+  name: routing-policy
+
+spec:
+  routes:
+    planning:
+      provider: claude
+
+    architecture:
+      provider: claude
+
+    codeGeneration:
+      provider: openai
+
+    testing:
+      provider: openai
+
+    longContextAnalysis:
+      provider: gemini
+
+    costOptimized:
+      provider: gemini
+
+  fallbackOrder:
+    - openai
+    - claude
+    - gemini

@@ -1,0 +1,19 @@
+apiVersion: prompts.platform.io/v1
+kind: PromptVersioning
+
+metadata:
+  name: prompt-versioning
+
+spec:
+  strategy: semantic-versioning
+
+  approvalRequired: true
+
+  retention:
+    keepVersions: 100
+
+  rollback:
+    enabled: true
+
+  auditTrail:
+    enabled: true

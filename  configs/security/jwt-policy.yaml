@@ -1,0 +1,28 @@
+apiVersion: security.platform.io/v1
+kind: JWTPolicy
+
+metadata:
+  name: platform-jwt-policy
+
+spec:
+  issuer: https://auth.platform.internal
+
+  audience:
+    - api-gateway
+    - platform-core
+    - agent-service
+
+  signingAlgorithm: RS256
+
+  expiration:
+    accessTokenMinutes: 15
+    refreshTokenDays: 30
+
+  validation:
+    verifyIssuer: true
+    verifyAudience: true
+    verifyExpiration: true
+
+  rotation:
+    enabled: true
+    intervalDays: 30

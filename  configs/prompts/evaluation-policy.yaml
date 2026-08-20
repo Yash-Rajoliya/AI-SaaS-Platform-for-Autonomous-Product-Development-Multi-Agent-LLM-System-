@@ -1,0 +1,23 @@
+apiVersion: prompts.platform.io/v1
+kind: PromptEvaluationPolicy
+
+metadata:
+  name: prompt-evaluation
+
+spec:
+  qualityThreshold: 0.90
+
+  hallucinationThreshold: 0.05
+
+  evaluationDimensions:
+    - correctness
+    - completeness
+    - security
+    - scalability
+    - maintainability
+
+  deployment:
+    requirePassingScore: true
+
+  continuousEvaluation:
+    enabled: true

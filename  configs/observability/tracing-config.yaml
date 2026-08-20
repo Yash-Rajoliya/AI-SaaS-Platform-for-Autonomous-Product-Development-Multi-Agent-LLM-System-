@@ -1,0 +1,21 @@
+apiVersion: observability.platform.io/v1
+kind: TracingConfig
+
+metadata:
+  name: tracing-config
+
+spec:
+  provider: opentelemetry
+
+  tracing:
+    enabled: true
+
+  exporters:
+    - tempo
+
+  sampling:
+    strategy: parentbased_traceidratio
+    ratio: 0.20
+
+  baggage:
+    propagateUserContext: true

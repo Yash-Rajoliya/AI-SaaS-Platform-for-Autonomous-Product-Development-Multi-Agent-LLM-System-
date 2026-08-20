@@ -1,0 +1,19 @@
+apiVersion: runtime.platform.io/v1
+kind: ExecutionConfig
+
+metadata:
+  name: execution-config
+
+spec:
+  retries:
+    maxAttempts: 5
+
+  backoff:
+    strategy: exponential
+    initialDelaySeconds: 5
+
+  auditing:
+    enabled: true
+
+  validation:
+    enabled: true

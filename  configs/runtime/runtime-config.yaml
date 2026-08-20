@@ -1,0 +1,20 @@
+apiVersion: runtime.platform.io/v1
+kind: RuntimeConfig
+
+metadata:
+  name: runtime-config
+
+spec:
+  isolation:
+    enabled: true
+
+  sandboxing:
+    required: true
+
+  defaultExecutionTimeoutSeconds: 3600
+
+  checkpointing:
+    enabled: true
+
+  recovery:
+    automatic: true

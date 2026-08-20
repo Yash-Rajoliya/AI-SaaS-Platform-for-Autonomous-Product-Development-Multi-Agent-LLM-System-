@@ -1,0 +1,30 @@
+apiVersion: security.platform.io/v1
+kind: IAMPolicy
+
+metadata:
+  name: platform-iam
+
+spec:
+  roles:
+    admin:
+      permissions:
+        - "*"
+
+    platform-engineer:
+      permissions:
+        - deployments.manage
+        - workflows.manage
+        - observability.read
+
+    developer:
+      permissions:
+        - projects.read
+        - projects.write
+        - executions.run
+
+    auditor:
+      permissions:
+        - audit.read
+        - compliance.read
+
+  principleOfLeastPrivilege: true

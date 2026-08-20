@@ -1,0 +1,22 @@
+apiVersion: observability.platform.io/v1
+kind: LoggingConfig
+
+metadata:
+  name: logging-config
+
+spec:
+  format: json
+
+  outputs:
+    - stdout
+    - loki
+
+  retentionDays: 90
+
+  levels:
+    default: info
+    security: warn
+    audit: info
+
+  correlationIds:
+    enabled: true

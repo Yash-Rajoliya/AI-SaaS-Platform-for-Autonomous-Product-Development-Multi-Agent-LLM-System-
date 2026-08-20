@@ -1,0 +1,24 @@
+apiVersion: observability.platform.io/v1
+kind: AlertingConfig
+
+metadata:
+  name: alerting-config
+
+spec:
+  channels:
+    - slack
+    - pagerduty
+    - email
+
+  severities:
+    critical:
+      escalationMinutes: 5
+
+    high:
+      escalationMinutes: 15
+
+    medium:
+      escalationMinutes: 60
+
+  notifications:
+    repeatIntervalMinutes: 30

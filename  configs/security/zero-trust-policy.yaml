@@ -1,0 +1,24 @@
+apiVersion: security.platform.io/v1
+kind: ZeroTrustPolicy
+
+metadata:
+  name: zero-trust
+
+spec:
+  authentication:
+    required: true
+
+  authorization:
+    required: true
+
+  network:
+    defaultDeny: true
+
+  workloads:
+    identityVerificationRequired: true
+
+  serviceCommunication:
+    mtlsRequired: true
+
+  deviceTrust:
+    enabled: true

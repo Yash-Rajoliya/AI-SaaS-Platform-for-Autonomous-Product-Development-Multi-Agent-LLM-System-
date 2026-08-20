@@ -1,0 +1,15 @@
+apiVersion: ai.platform.io/v1
+kind: ModelConfig
+
+metadata:
+  name: claude
+
+spec:
+  provider: anthropic
+
+  models:
+    primary: claude-opus
+    fallback: claude-sonnet
+
+  limits:
+    maxTokens: 200000

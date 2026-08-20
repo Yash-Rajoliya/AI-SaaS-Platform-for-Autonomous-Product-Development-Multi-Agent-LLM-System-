@@ -1,0 +1,23 @@
+apiVersion: security.platform.io/v1
+kind: RateLimitPolicy
+
+metadata:
+  name: api-rate-limits
+
+spec:
+  defaults:
+    requestsPerMinute: 1000
+    burst: 200
+
+  endpoints:
+    "/api/v1/auth/login":
+      requestsPerMinute: 20
+
+    "/api/v1/executions":
+      requestsPerMinute: 500
+
+    "/api/v1/agents":
+      requestsPerMinute: 300
+
+  actions:
+    exceededLimit: throttle
