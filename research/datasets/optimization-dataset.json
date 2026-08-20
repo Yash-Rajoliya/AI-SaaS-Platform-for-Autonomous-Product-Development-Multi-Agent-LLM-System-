@@ -1,0 +1,9 @@
+{
+  "optimization_categories": [
+    "latency",
+    "cost",
+    "throughput",
+    "availability",
+    "resource-utilization"
+  ]
+}

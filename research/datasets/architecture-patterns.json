@@ -1,0 +1,12 @@
+{
+  "patterns": [
+    "microservices",
+    "event-driven",
+    "serverless",
+    "modular-monolith",
+    "hexagonal",
+    "cqrs",
+    "event-sourcing",
+    "federated-runtime"
+  ]
+}

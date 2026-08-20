@@ -1,0 +1,8 @@
+{
+  "signals": [
+    "metrics",
+    "logs",
+    "traces",
+    "events"
+  ]
+}

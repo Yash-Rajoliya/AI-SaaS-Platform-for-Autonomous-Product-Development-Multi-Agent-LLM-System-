@@ -1,0 +1,9 @@
+{
+  "incident_types": [
+    "service_failure",
+    "database_failure",
+    "network_partition",
+    "security_incident",
+    "deployment_failure"
+  ]
+}
