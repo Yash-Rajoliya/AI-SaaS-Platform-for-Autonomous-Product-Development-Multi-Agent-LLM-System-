@@ -1,0 +1,7 @@
+{
+  "deploymentId": "deploy-001",
+  "environment": "production",
+  "version": "1.0.0",
+  "strategy": "canary",
+  "rollbackEnabled": true
+}

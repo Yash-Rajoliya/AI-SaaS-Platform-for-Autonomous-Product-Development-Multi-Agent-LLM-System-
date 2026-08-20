@@ -1,0 +1,7 @@
+{
+  "traceId": "trace-001",
+  "spanId": "span-001",
+  "service": "agent-service",
+  "latencyMs": 124,
+  "status": "success"
+}

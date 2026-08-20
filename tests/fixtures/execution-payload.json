@@ -1,0 +1,7 @@
+{
+  "executionId": "exec-001",
+  "projectId": "project-demo-001",
+  "agent": "developer",
+  "task": "Generate authentication service",
+  "priority": "high"
+}
